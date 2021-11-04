@@ -48,7 +48,6 @@ class PatientDAO(
         sessionFactory.openSession().use { session ->
             session.beginTransaction()
             val patient: Patient? = find(id)
-
             session.remove(patient)
             session.transaction.commit()
         }
